@@ -1,14 +1,16 @@
 /*
-generating json file based on: 1-service-with-executor-task/summary.json
+Generate randomized JSON file in the structure of:
+	_fixtures/1-service-with-executor-task/summary.json
+For use in MesosSummaryActions.js
 */
 
 let fs = require('fs')
 
-const CPU = 8
-const MEM = 16000
-const GPU = 4
-const DISK = 256000
 
+const AGENT_CPU = 8
+const AGENT_MEM = 16000
+const AGENT_GPU = 4
+const AGENT_DISK = 256000
 const SUBNET = '10.0'
 
 
@@ -28,7 +30,13 @@ fs.writeFile('./summary.json', JSON.stringify(out, null, 2), function(err) {
 	console.log('saved')
 })
 
+/*
+Make an empty slave.
 
+@param: idTag, String
+@param: slaveNumber, Integer
+@return: slave object
+*/
 function makeEmptySlave(idTag, slaveNumber) {
 	let id = idTag + 'S' + slaveNumber
 
@@ -39,10 +47,10 @@ function makeEmptySlave(idTag, slaveNumber) {
 	let registered_time = Date.now()
 
 	let resources = {
-		cpus: CPU,
-		disk: DISK,
-		gpu: GPU,
-		mem: MEM,
+		cpus: AGENT_CPU,
+		disk: AGENT_DISK,
+		gpu: AGENT_GPU,
+		mem: AGENT_MEM,
 		ports: "[1025-2180, 2182-3887, 3889-5049, 5052-8079, 8082-8180, 8182-32000]"
 	}
 
@@ -85,29 +93,25 @@ function makeEmptySlave(idTag, slaveNumber) {
 }
 
 /*
-make a random amount of slaves.  use all the resources the frameworks require.
-@param: idTag, used cluster-wide
-@param: frameworks, array
+Make a random amount of empty slaves.  Break the frameworks into tasks
+and roundrobin schedule all task on the slaves.
+
+@param: idTag, String 
+@param: frameworks, Array
+@return: Array of slave objects
 */
 function makeSlaves(idTag, frameworks) {
-	// make all slaves have the same HW specs
-	// sequentially fill agents until no more space in an agent
-	// increment the TASK_STARTED, etc, etc for an agent as tasks are added to it
-	// the framework ids field references all frameworks with tasks on it
-	// and same with the slave ids for the frameworks
-
-	// make some empty slaves
+	// make random amount of empty slaves
 	let slaves = []
 	let numSlaves = getRandomInteger(2, 100)
 	for (let i = 0; i < numSlaves; i++) {
 		slaves.push(makeEmptySlave(idTag, i))
 	}
 
-	// make a nice clean array of tasks to schedule
+	// make a nice clean array of tasks to schedule from the frameworks
 	let frameworksClone = Object.assign({}, frameworks)
 	let tasks = []
 	for (let f of frameworks) {
-		// extract all tasks from framework
 		let numTasks = f.TASK_RUNNING
 		for (let i = 0; i < numTasks; i++) {
 			tasks.push({
@@ -120,55 +124,58 @@ function makeSlaves(idTag, frameworks) {
 		}
 	}
 
-	// roundrobin schedule on slaves
+	// roundrobin schedule all tasks on slaves
 	let slaveIndex = 0
 	while (tasks.length > 0) {
+		let taskToSchedule = tasks[0]
+
 		// find slave with enough space
 		let slave = slaves[slaveIndex]
 		let start = slaveIndex
-		while ( tasks[0].cpu > (slave.resources.cpus - slave.used_resources.cpus) ||
-				tasks[0].gpu > (slave.resources.gpus - slave.used_resources.gpus) ||
-				tasks[0].mem > (slave.resources.mem - slave.used_resources.mem) ||
-				tasks[0].disk > (slave.resources.disk - slave.used_resources.disk)) {
-
+		while (taskTooBigForSlave(taskToSchedule, slave)) {
+			console.log('too big')
+			// circular iteration
 			slaveIndex += 1
-			if (slaveIndex >= slaves.length) { // circular
+			if (slaveIndex >= slaves.length) {
 				slaveIndex = 0
 			} 
-			if (slaveIndex === start) { // looked at every slave, no space for this tasks, create another slave and schedule on it
+
+			// no slaves have space for task, make a new slave and schedule task on it
+			if (slaveIndex === start) {
 				let emptySlave = makeEmptySlave(idTag, slaves.length)
 				slaves.push(emptySlave)
 				let slave = emptySlave
+				break;
 			}
+
 			slave = slaves[slaveIndex]
 		}
 
 		// schedule on the slave
-		slave.used_resources.cpus += tasks[0].cpu
-		slave.used_resources.gpus += tasks[0].gpu
-		slave.used_resources.mem += tasks[0].mem
-		slave.used_resources.disk += tasks[0].disk
+		slave.used_resources.cpus += taskToSchedule.cpu
+		slave.used_resources.gpus += taskToSchedule.gpu
+		slave.used_resources.mem += taskToSchedule.mem
+		slave.used_resources.disk += taskToSchedule.disk
 		slave.TASK_RUNNING += 1
-		if (! slave.framework_ids.includes(tasks[0].framework_id)) {
-			slave.framework_ids.push(tasks[0].framework_id)
+		if (! slave.framework_ids.includes(taskToSchedule.framework_id)) {
+			slave.framework_ids.push(taskToSchedule.framework_id)
 		}
 
 		// update label on framework
 		for (let f of frameworks) {
-			if (f.id === tasks[0].framework_id) {
-				// add slave to its list if doesn't exist
+			if (f.id === taskToSchedule.framework_id) {
 				if (! f.slave_ids.includes(slave.id)) {
 					f.slave_ids.push(slave.id)
 				}
 			}
 		}
 
-		// splice tasks
+		// splice scheduled task
 		tasks.splice(0, 1)
 
-		// schedule on next slave
+		// increment slave to next task
 		slaveIndex += 1
-		if (slaveIndex >= slaves.length) { // circular
+		if (slaveIndex >= slaves.length) {
 			slaveIndex = 0
 		} 
 	}
@@ -176,6 +183,13 @@ function makeSlaves(idTag, frameworks) {
 	return slaves
 }
 
+/*
+Make a random amount of frameworks.  Random amount of cpu/gpu/disk/mem for each,
+and also random amount of tasks running for each.
+
+@param: idTag, String
+@return: Array of frameworks
+*/
 function makeFrameworks(idTag) {
 	const names = ['arangodb', 'cassandra', 'chronos', 'jenkins', 'kafka', 'spark', 'elasticsearch', 'calico', 'hdfs', 'mysql']
 
@@ -248,6 +262,25 @@ function makeFrameworks(idTag) {
 	return frameworks
 }
 
+/*
+Helpers
+*/
+
+function getRandomInteger(l, h) {
+	return Math.floor(Math.random() * (h - l)) + l
+} 
+
+function getIp4Address() {
+	return SUBNET + '.' + getRandomInteger(0, 9) + '.' + getRandomInteger(0,255)
+}
+
+function taskTooBigForSlave(task, slave) {
+	return  task.cpu > (slave.resources.cpus - slave.used_resources.cpus) ||
+			task.gpu > (slave.resources.gpus - slave.used_resources.gpus) ||
+			task.mem > (slave.resources.mem - slave.used_resources.mem)   ||
+			task.disk > (slave.resources.disk - slave.used_resources.disk);
+}
+
 function getChar() {
 	const possible = "abcdefghijklmnopqrstuvwxyz0123456789"
 	return possible.charAt(getRandomInteger(0, possible.length))
@@ -259,16 +292,4 @@ function makeIdTag() {
 			new Array(4).fill('').map(() => getChar()).join('') + '-' +
 			new Array(4).fill('').map(() => getChar()).join('') + '-' +
 			new Array(12).fill('').map(() => getChar()).join('') + '-'
-}
-
-/*
-Helpers
-*/
-
-function getRandomInteger(l, h) {
-	return Math.floor(Math.random() * (h - l)) + l
-} 
-
-function getIp4Address() {
-	return SUBNET + '.' + getRandomInteger(0, 9) + '.' + getRandomInteger(0,255)
 }
