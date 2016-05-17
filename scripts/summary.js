@@ -165,6 +165,12 @@ function makeSlaves(idTag, frameworks) {
 
 		// splice tasks
 		tasks.splice(0, 1)
+
+		// schedule on next slave
+		slaveIndex += 1
+		if (slaveIndex >= slaves.length) { // circular
+			slaveIndex = 0
+		} 
 	}
 
 	return slaves
