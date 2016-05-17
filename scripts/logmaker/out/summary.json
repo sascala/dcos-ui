@@ -1,0 +1,1073 @@
+{
+  "hostname": "10.0.0.82",
+  "cluser": "andrew-viz",
+  "slaves": [
+    {
+      "id": "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S0",
+      "hostname": "10.0.6.71",
+      "pid": "slave(1)@10.0.6.71:5051",
+      "registered_time": 1463525151225,
+      "resources": {
+        "cpus": 8,
+        "gpus": 2,
+        "mem": 16000,
+        "disk": 256000,
+        "ports": "[1025-2180, 2182-3887, 3889-5049, 5052-8079, 8082-8180, 8182-32000]"
+      },
+      "used_resources": {
+        "cpus": 1.7866666666666668,
+        "gpus": 0,
+        "disk": 14293.333333333332,
+        "mem": 1786.6666666666665
+      },
+      "offered_resources": {
+        "cpus": 0,
+        "gpus": 0,
+        "disk": 0,
+        "mem": 0
+      },
+      "reserved_resources": [],
+      "unreserved_resources": [],
+      "active": true,
+      "version": "0.27.0",
+      "TASK_STAGING": 0,
+      "TASK_STARTING": 0,
+      "TASK_RUNNING": 21,
+      "TASK_FINISHED": 0,
+      "TASK_KILLED": 0,
+      "TASK_FAILED": 0,
+      "TASK_LOST": 0,
+      "TASK_ERROR": 0,
+      "framework_ids": [
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0006",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0005",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0004",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0003",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0002",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0001",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0000"
+      ]
+    },
+    {
+      "id": "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S1",
+      "hostname": "10.0.0.241",
+      "pid": "slave(1)@10.0.0.241:5051",
+      "registered_time": 1463525151225,
+      "resources": {
+        "cpus": 8,
+        "gpus": 2,
+        "mem": 16000,
+        "disk": 256000,
+        "ports": "[1025-2180, 2182-3887, 3889-5049, 5052-8079, 8082-8180, 8182-32000]"
+      },
+      "used_resources": {
+        "cpus": 1.7866666666666668,
+        "gpus": 0,
+        "disk": 14293.333333333332,
+        "mem": 1786.6666666666665
+      },
+      "offered_resources": {
+        "cpus": 0,
+        "gpus": 0,
+        "disk": 0,
+        "mem": 0
+      },
+      "reserved_resources": [],
+      "unreserved_resources": [],
+      "active": true,
+      "version": "0.27.0",
+      "TASK_STAGING": 0,
+      "TASK_STARTING": 0,
+      "TASK_RUNNING": 21,
+      "TASK_FINISHED": 0,
+      "TASK_KILLED": 0,
+      "TASK_FAILED": 0,
+      "TASK_LOST": 0,
+      "TASK_ERROR": 0,
+      "framework_ids": [
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0006",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0005",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0004",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0003",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0002",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0001",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0000"
+      ]
+    },
+    {
+      "id": "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S2",
+      "hostname": "10.0.0.52",
+      "pid": "slave(1)@10.0.0.52:5051",
+      "registered_time": 1463525151225,
+      "resources": {
+        "cpus": 8,
+        "gpus": 2,
+        "mem": 16000,
+        "disk": 256000,
+        "ports": "[1025-2180, 2182-3887, 3889-5049, 5052-8079, 8082-8180, 8182-32000]"
+      },
+      "used_resources": {
+        "cpus": 1.7866666666666668,
+        "gpus": 0,
+        "disk": 14293.333333333332,
+        "mem": 1786.6666666666665
+      },
+      "offered_resources": {
+        "cpus": 0,
+        "gpus": 0,
+        "disk": 0,
+        "mem": 0
+      },
+      "reserved_resources": [],
+      "unreserved_resources": [],
+      "active": true,
+      "version": "0.27.0",
+      "TASK_STAGING": 0,
+      "TASK_STARTING": 0,
+      "TASK_RUNNING": 21,
+      "TASK_FINISHED": 0,
+      "TASK_KILLED": 0,
+      "TASK_FAILED": 0,
+      "TASK_LOST": 0,
+      "TASK_ERROR": 0,
+      "framework_ids": [
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0006",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0005",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0004",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0003",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0002",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0001",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0000"
+      ]
+    },
+    {
+      "id": "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S3",
+      "hostname": "10.0.0.17",
+      "pid": "slave(1)@10.0.0.17:5051",
+      "registered_time": 1463525151225,
+      "resources": {
+        "cpus": 8,
+        "gpus": 2,
+        "mem": 16000,
+        "disk": 256000,
+        "ports": "[1025-2180, 2182-3887, 3889-5049, 5052-8079, 8082-8180, 8182-32000]"
+      },
+      "used_resources": {
+        "cpus": 1.7866666666666668,
+        "gpus": 0,
+        "disk": 14293.333333333332,
+        "mem": 1786.6666666666665
+      },
+      "offered_resources": {
+        "cpus": 0,
+        "gpus": 0,
+        "disk": 0,
+        "mem": 0
+      },
+      "reserved_resources": [],
+      "unreserved_resources": [],
+      "active": true,
+      "version": "0.27.0",
+      "TASK_STAGING": 0,
+      "TASK_STARTING": 0,
+      "TASK_RUNNING": 21,
+      "TASK_FINISHED": 0,
+      "TASK_KILLED": 0,
+      "TASK_FAILED": 0,
+      "TASK_LOST": 0,
+      "TASK_ERROR": 0,
+      "framework_ids": [
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0006",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0005",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0004",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0003",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0002",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0001",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0000"
+      ]
+    },
+    {
+      "id": "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S4",
+      "hostname": "10.0.0.164",
+      "pid": "slave(1)@10.0.0.164:5051",
+      "registered_time": 1463525151225,
+      "resources": {
+        "cpus": 8,
+        "gpus": 2,
+        "mem": 16000,
+        "disk": 256000,
+        "ports": "[1025-2180, 2182-3887, 3889-5049, 5052-8079, 8082-8180, 8182-32000]"
+      },
+      "used_resources": {
+        "cpus": 1.7866666666666668,
+        "gpus": 0,
+        "disk": 14293.333333333332,
+        "mem": 1786.6666666666665
+      },
+      "offered_resources": {
+        "cpus": 0,
+        "gpus": 0,
+        "disk": 0,
+        "mem": 0
+      },
+      "reserved_resources": [],
+      "unreserved_resources": [],
+      "active": true,
+      "version": "0.27.0",
+      "TASK_STAGING": 0,
+      "TASK_STARTING": 0,
+      "TASK_RUNNING": 21,
+      "TASK_FINISHED": 0,
+      "TASK_KILLED": 0,
+      "TASK_FAILED": 0,
+      "TASK_LOST": 0,
+      "TASK_ERROR": 0,
+      "framework_ids": [
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0006",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0005",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0004",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0003",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0002",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0001",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0000"
+      ]
+    },
+    {
+      "id": "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S5",
+      "hostname": "10.0.2.69",
+      "pid": "slave(1)@10.0.2.69:5051",
+      "registered_time": 1463525151225,
+      "resources": {
+        "cpus": 8,
+        "gpus": 2,
+        "mem": 16000,
+        "disk": 256000,
+        "ports": "[1025-2180, 2182-3887, 3889-5049, 5052-8079, 8082-8180, 8182-32000]"
+      },
+      "used_resources": {
+        "cpus": 1.7866666666666668,
+        "gpus": 0,
+        "disk": 14293.333333333332,
+        "mem": 1786.6666666666665
+      },
+      "offered_resources": {
+        "cpus": 0,
+        "gpus": 0,
+        "disk": 0,
+        "mem": 0
+      },
+      "reserved_resources": [],
+      "unreserved_resources": [],
+      "active": true,
+      "version": "0.27.0",
+      "TASK_STAGING": 0,
+      "TASK_STARTING": 0,
+      "TASK_RUNNING": 21,
+      "TASK_FINISHED": 0,
+      "TASK_KILLED": 0,
+      "TASK_FAILED": 0,
+      "TASK_LOST": 0,
+      "TASK_ERROR": 0,
+      "framework_ids": [
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0006",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0005",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0004",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0003",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0002",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0001",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0000"
+      ]
+    },
+    {
+      "id": "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S6",
+      "hostname": "10.0.6.16",
+      "pid": "slave(1)@10.0.6.16:5051",
+      "registered_time": 1463525151225,
+      "resources": {
+        "cpus": 8,
+        "gpus": 2,
+        "mem": 16000,
+        "disk": 256000,
+        "ports": "[1025-2180, 2182-3887, 3889-5049, 5052-8079, 8082-8180, 8182-32000]"
+      },
+      "used_resources": {
+        "cpus": 1.7866666666666668,
+        "gpus": 0,
+        "disk": 14293.333333333332,
+        "mem": 1786.6666666666665
+      },
+      "offered_resources": {
+        "cpus": 0,
+        "gpus": 0,
+        "disk": 0,
+        "mem": 0
+      },
+      "reserved_resources": [],
+      "unreserved_resources": [],
+      "active": true,
+      "version": "0.27.0",
+      "TASK_STAGING": 0,
+      "TASK_STARTING": 0,
+      "TASK_RUNNING": 21,
+      "TASK_FINISHED": 0,
+      "TASK_KILLED": 0,
+      "TASK_FAILED": 0,
+      "TASK_LOST": 0,
+      "TASK_ERROR": 0,
+      "framework_ids": [
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0006",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0005",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0004",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0003",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0002",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0001",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0000"
+      ]
+    },
+    {
+      "id": "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S7",
+      "hostname": "10.0.2.145",
+      "pid": "slave(1)@10.0.2.145:5051",
+      "registered_time": 1463525151225,
+      "resources": {
+        "cpus": 8,
+        "gpus": 2,
+        "mem": 16000,
+        "disk": 256000,
+        "ports": "[1025-2180, 2182-3887, 3889-5049, 5052-8079, 8082-8180, 8182-32000]"
+      },
+      "used_resources": {
+        "cpus": 1.7866666666666668,
+        "gpus": 0,
+        "disk": 14293.333333333332,
+        "mem": 1786.6666666666665
+      },
+      "offered_resources": {
+        "cpus": 0,
+        "gpus": 0,
+        "disk": 0,
+        "mem": 0
+      },
+      "reserved_resources": [],
+      "unreserved_resources": [],
+      "active": true,
+      "version": "0.27.0",
+      "TASK_STAGING": 0,
+      "TASK_STARTING": 0,
+      "TASK_RUNNING": 21,
+      "TASK_FINISHED": 0,
+      "TASK_KILLED": 0,
+      "TASK_FAILED": 0,
+      "TASK_LOST": 0,
+      "TASK_ERROR": 0,
+      "framework_ids": [
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0006",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0005",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0004",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0003",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0002",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0001",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0000"
+      ]
+    },
+    {
+      "id": "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S8",
+      "hostname": "10.0.5.2",
+      "pid": "slave(1)@10.0.5.2:5051",
+      "registered_time": 1463525151225,
+      "resources": {
+        "cpus": 8,
+        "gpus": 2,
+        "mem": 16000,
+        "disk": 256000,
+        "ports": "[1025-2180, 2182-3887, 3889-5049, 5052-8079, 8082-8180, 8182-32000]"
+      },
+      "used_resources": {
+        "cpus": 1.7866666666666668,
+        "gpus": 0,
+        "disk": 14293.333333333332,
+        "mem": 1786.6666666666665
+      },
+      "offered_resources": {
+        "cpus": 0,
+        "gpus": 0,
+        "disk": 0,
+        "mem": 0
+      },
+      "reserved_resources": [],
+      "unreserved_resources": [],
+      "active": true,
+      "version": "0.27.0",
+      "TASK_STAGING": 0,
+      "TASK_STARTING": 0,
+      "TASK_RUNNING": 21,
+      "TASK_FINISHED": 0,
+      "TASK_KILLED": 0,
+      "TASK_FAILED": 0,
+      "TASK_LOST": 0,
+      "TASK_ERROR": 0,
+      "framework_ids": [
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0006",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0005",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0004",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0003",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0002",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0001",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0000"
+      ]
+    },
+    {
+      "id": "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S9",
+      "hostname": "10.0.0.84",
+      "pid": "slave(1)@10.0.0.84:5051",
+      "registered_time": 1463525151225,
+      "resources": {
+        "cpus": 8,
+        "gpus": 2,
+        "mem": 16000,
+        "disk": 256000,
+        "ports": "[1025-2180, 2182-3887, 3889-5049, 5052-8079, 8082-8180, 8182-32000]"
+      },
+      "used_resources": {
+        "cpus": 1.7866666666666668,
+        "gpus": 0,
+        "disk": 14293.333333333332,
+        "mem": 1786.6666666666665
+      },
+      "offered_resources": {
+        "cpus": 0,
+        "gpus": 0,
+        "disk": 0,
+        "mem": 0
+      },
+      "reserved_resources": [],
+      "unreserved_resources": [],
+      "active": true,
+      "version": "0.27.0",
+      "TASK_STAGING": 0,
+      "TASK_STARTING": 0,
+      "TASK_RUNNING": 21,
+      "TASK_FINISHED": 0,
+      "TASK_KILLED": 0,
+      "TASK_FAILED": 0,
+      "TASK_LOST": 0,
+      "TASK_ERROR": 0,
+      "framework_ids": [
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0006",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0005",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0004",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0003",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0002",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0001",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0000"
+      ]
+    },
+    {
+      "id": "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S10",
+      "hostname": "10.0.4.90",
+      "pid": "slave(1)@10.0.4.90:5051",
+      "registered_time": 1463525151225,
+      "resources": {
+        "cpus": 8,
+        "gpus": 2,
+        "mem": 16000,
+        "disk": 256000,
+        "ports": "[1025-2180, 2182-3887, 3889-5049, 5052-8079, 8082-8180, 8182-32000]"
+      },
+      "used_resources": {
+        "cpus": 1.6533333333333335,
+        "gpus": 0,
+        "disk": 13226.666666666666,
+        "mem": 1653.3333333333333
+      },
+      "offered_resources": {
+        "cpus": 0,
+        "gpus": 0,
+        "disk": 0,
+        "mem": 0
+      },
+      "reserved_resources": [],
+      "unreserved_resources": [],
+      "active": true,
+      "version": "0.27.0",
+      "TASK_STAGING": 0,
+      "TASK_STARTING": 0,
+      "TASK_RUNNING": 20,
+      "TASK_FINISHED": 0,
+      "TASK_KILLED": 0,
+      "TASK_FAILED": 0,
+      "TASK_LOST": 0,
+      "TASK_ERROR": 0,
+      "framework_ids": [
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0006",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0005",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0004",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0003",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0002",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0001",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0000"
+      ]
+    },
+    {
+      "id": "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S11",
+      "hostname": "10.0.9.153",
+      "pid": "slave(1)@10.0.9.153:5051",
+      "registered_time": 1463525151225,
+      "resources": {
+        "cpus": 8,
+        "gpus": 2,
+        "mem": 16000,
+        "disk": 256000,
+        "ports": "[1025-2180, 2182-3887, 3889-5049, 5052-8079, 8082-8180, 8182-32000]"
+      },
+      "used_resources": {
+        "cpus": 1.6533333333333335,
+        "gpus": 0,
+        "disk": 13226.666666666666,
+        "mem": 1653.3333333333333
+      },
+      "offered_resources": {
+        "cpus": 0,
+        "gpus": 0,
+        "disk": 0,
+        "mem": 0
+      },
+      "reserved_resources": [],
+      "unreserved_resources": [],
+      "active": true,
+      "version": "0.27.0",
+      "TASK_STAGING": 0,
+      "TASK_STARTING": 0,
+      "TASK_RUNNING": 20,
+      "TASK_FINISHED": 0,
+      "TASK_KILLED": 0,
+      "TASK_FAILED": 0,
+      "TASK_LOST": 0,
+      "TASK_ERROR": 0,
+      "framework_ids": [
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0006",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0005",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0004",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0003",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0002",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0001",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0000"
+      ]
+    },
+    {
+      "id": "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S12",
+      "hostname": "10.0.8.24",
+      "pid": "slave(1)@10.0.8.24:5051",
+      "registered_time": 1463525151225,
+      "resources": {
+        "cpus": 8,
+        "gpus": 2,
+        "mem": 16000,
+        "disk": 256000,
+        "ports": "[1025-2180, 2182-3887, 3889-5049, 5052-8079, 8082-8180, 8182-32000]"
+      },
+      "used_resources": {
+        "cpus": 1.7066666666666668,
+        "gpus": 0,
+        "disk": 13653.333333333332,
+        "mem": 1706.6666666666665
+      },
+      "offered_resources": {
+        "cpus": 0,
+        "gpus": 0,
+        "disk": 0,
+        "mem": 0
+      },
+      "reserved_resources": [],
+      "unreserved_resources": [],
+      "active": true,
+      "version": "0.27.0",
+      "TASK_STAGING": 0,
+      "TASK_STARTING": 0,
+      "TASK_RUNNING": 20,
+      "TASK_FINISHED": 0,
+      "TASK_KILLED": 0,
+      "TASK_FAILED": 0,
+      "TASK_LOST": 0,
+      "TASK_ERROR": 0,
+      "framework_ids": [
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0006",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0005",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0004",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0003",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0002",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0001",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0000"
+      ]
+    },
+    {
+      "id": "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S13",
+      "hostname": "10.0.6.187",
+      "pid": "slave(1)@10.0.6.187:5051",
+      "registered_time": 1463525151225,
+      "resources": {
+        "cpus": 8,
+        "gpus": 2,
+        "mem": 16000,
+        "disk": 256000,
+        "ports": "[1025-2180, 2182-3887, 3889-5049, 5052-8079, 8082-8180, 8182-32000]"
+      },
+      "used_resources": {
+        "cpus": 1.7066666666666668,
+        "gpus": 0,
+        "disk": 13653.333333333332,
+        "mem": 1706.6666666666665
+      },
+      "offered_resources": {
+        "cpus": 0,
+        "gpus": 0,
+        "disk": 0,
+        "mem": 0
+      },
+      "reserved_resources": [],
+      "unreserved_resources": [],
+      "active": true,
+      "version": "0.27.0",
+      "TASK_STAGING": 0,
+      "TASK_STARTING": 0,
+      "TASK_RUNNING": 20,
+      "TASK_FINISHED": 0,
+      "TASK_KILLED": 0,
+      "TASK_FAILED": 0,
+      "TASK_LOST": 0,
+      "TASK_ERROR": 0,
+      "framework_ids": [
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0006",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0005",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0004",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0003",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0002",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0001",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0000"
+      ]
+    },
+    {
+      "id": "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S14",
+      "hostname": "10.0.3.31",
+      "pid": "slave(1)@10.0.3.31:5051",
+      "registered_time": 1463525151225,
+      "resources": {
+        "cpus": 8,
+        "gpus": 2,
+        "mem": 16000,
+        "disk": 256000,
+        "ports": "[1025-2180, 2182-3887, 3889-5049, 5052-8079, 8082-8180, 8182-32000]"
+      },
+      "used_resources": {
+        "cpus": 1.7066666666666668,
+        "gpus": 0,
+        "disk": 13653.333333333332,
+        "mem": 1706.6666666666665
+      },
+      "offered_resources": {
+        "cpus": 0,
+        "gpus": 0,
+        "disk": 0,
+        "mem": 0
+      },
+      "reserved_resources": [],
+      "unreserved_resources": [],
+      "active": true,
+      "version": "0.27.0",
+      "TASK_STAGING": 0,
+      "TASK_STARTING": 0,
+      "TASK_RUNNING": 20,
+      "TASK_FINISHED": 0,
+      "TASK_KILLED": 0,
+      "TASK_FAILED": 0,
+      "TASK_LOST": 0,
+      "TASK_ERROR": 0,
+      "framework_ids": [
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0006",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0005",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0004",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0003",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0002",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0001",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0000"
+      ]
+    },
+    {
+      "id": "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S15",
+      "hostname": "10.0.0.132",
+      "pid": "slave(1)@10.0.0.132:5051",
+      "registered_time": 1463525151225,
+      "resources": {
+        "cpus": 8,
+        "gpus": 2,
+        "mem": 16000,
+        "disk": 256000,
+        "ports": "[1025-2180, 2182-3887, 3889-5049, 5052-8079, 8082-8180, 8182-32000]"
+      },
+      "used_resources": {
+        "cpus": 1.7066666666666668,
+        "gpus": 0,
+        "disk": 13653.333333333332,
+        "mem": 1706.6666666666665
+      },
+      "offered_resources": {
+        "cpus": 0,
+        "gpus": 0,
+        "disk": 0,
+        "mem": 0
+      },
+      "reserved_resources": [],
+      "unreserved_resources": [],
+      "active": true,
+      "version": "0.27.0",
+      "TASK_STAGING": 0,
+      "TASK_STARTING": 0,
+      "TASK_RUNNING": 20,
+      "TASK_FINISHED": 0,
+      "TASK_KILLED": 0,
+      "TASK_FAILED": 0,
+      "TASK_LOST": 0,
+      "TASK_ERROR": 0,
+      "framework_ids": [
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0006",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0005",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0004",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0003",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0002",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0001",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0000"
+      ]
+    }
+  ],
+  "frameworks": [
+    {
+      "id": "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0000",
+      "name": "marathon",
+      "hostname": "10.0.0.129",
+      "pid": "scheduler-cocirt7-z4bw-cs5h-ejk6-0wtosec2nx86@10.0.0.129:77844",
+      "used_resources": {
+        "cpus": 4,
+        "gpus": 0,
+        "mem": 4000,
+        "disk": 32000
+      },
+      "offered_resources": {
+        "cpus": 0,
+        "gpus": 0,
+        "mem": 0,
+        "disk": 0
+      },
+      "webui_url": "http://10.0.0.129:8080",
+      "capabilities": [],
+      "active": true,
+      "TASK_STAGING": 0,
+      "TASK_STARTING": 0,
+      "TASK_RUNNING": 30,
+      "TASK_FINISHED": 0,
+      "TASK_KILLED": 0,
+      "TASK_FAILED": 0,
+      "TASK_LOST": 0,
+      "TASK_ERROR": 0,
+      "slave_ids": [
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S12",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S13",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S14",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S15",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S0",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S1",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S2",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S3",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S4",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S5",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S6",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S7",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S8",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S9",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S10",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S11"
+      ]
+    },
+    {
+      "id": "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0001",
+      "name": "spark",
+      "hostname": "10.0.6.138",
+      "pid": "scheduler-luwph5jp-vmw-daxh-l3z-kn7o2swtwt4a@10.0.6.138:17812",
+      "used_resources": {
+        "cpus": 4,
+        "gpus": 0,
+        "mem": 4000,
+        "disk": 32000
+      },
+      "offered_resources": {
+        "cpus": 0,
+        "gpus": 0,
+        "mem": 0,
+        "disk": 0
+      },
+      "webui_url": "http://10.0.6.138:8080",
+      "capabilities": [],
+      "active": true,
+      "TASK_STAGING": 0,
+      "TASK_STARTING": 0,
+      "TASK_RUNNING": 50,
+      "TASK_FINISHED": 0,
+      "TASK_KILLED": 0,
+      "TASK_FAILED": 0,
+      "TASK_LOST": 0,
+      "TASK_ERROR": 0,
+      "slave_ids": [
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S10",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S11",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S12",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S13",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S14",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S15",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S0",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S1",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S2",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S3",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S4",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S5",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S6",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S7",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S8",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S9"
+      ]
+    },
+    {
+      "id": "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0002",
+      "name": "cassandra",
+      "hostname": "10.0.8.116",
+      "pid": "scheduler-08k5t8h-xtee-4sio-x8k6-u219y6jw6vmb@10.0.8.116:2737",
+      "used_resources": {
+        "cpus": 4,
+        "gpus": 0,
+        "mem": 4000,
+        "disk": 32000
+      },
+      "offered_resources": {
+        "cpus": 0,
+        "gpus": 0,
+        "mem": 0,
+        "disk": 0
+      },
+      "webui_url": "http://10.0.8.116:8080",
+      "capabilities": [],
+      "active": true,
+      "TASK_STAGING": 0,
+      "TASK_STARTING": 0,
+      "TASK_RUNNING": 50,
+      "TASK_FINISHED": 0,
+      "TASK_KILLED": 0,
+      "TASK_FAILED": 0,
+      "TASK_LOST": 0,
+      "TASK_ERROR": 0,
+      "slave_ids": [
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S8",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S9",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S10",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S11",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S12",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S13",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S14",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S15",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S0",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S1",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S2",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S3",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S4",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S5",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S6",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S7"
+      ]
+    },
+    {
+      "id": "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0003",
+      "name": "jenkins",
+      "hostname": "10.0.1.228",
+      "pid": "scheduler-r81o7j3-vqd5-7p4r-l4e7-rhu7x62nu1j6@10.0.1.228:76330",
+      "used_resources": {
+        "cpus": 4,
+        "gpus": 0,
+        "mem": 4000,
+        "disk": 32000
+      },
+      "offered_resources": {
+        "cpus": 0,
+        "gpus": 0,
+        "mem": 0,
+        "disk": 0
+      },
+      "webui_url": "http://10.0.1.228:8080",
+      "capabilities": [],
+      "active": true,
+      "TASK_STAGING": 0,
+      "TASK_STARTING": 0,
+      "TASK_RUNNING": 50,
+      "TASK_FINISHED": 0,
+      "TASK_KILLED": 0,
+      "TASK_FAILED": 0,
+      "TASK_LOST": 0,
+      "TASK_ERROR": 0,
+      "slave_ids": [
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S6",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S7",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S8",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S9",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S10",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S11",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S12",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S13",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S14",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S15",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S0",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S1",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S2",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S3",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S4",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S5"
+      ]
+    },
+    {
+      "id": "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0004",
+      "name": "chronos",
+      "hostname": "10.0.0.26",
+      "pid": "scheduler-yfz9pbr-rnkc-o2z-iwba-eqbi3vl5pmb@10.0.0.26:5654",
+      "used_resources": {
+        "cpus": 4,
+        "gpus": 0,
+        "mem": 4000,
+        "disk": 32000
+      },
+      "offered_resources": {
+        "cpus": 0,
+        "gpus": 0,
+        "mem": 0,
+        "disk": 0
+      },
+      "webui_url": "http://10.0.0.26:8080",
+      "capabilities": [],
+      "active": true,
+      "TASK_STAGING": 0,
+      "TASK_STARTING": 0,
+      "TASK_RUNNING": 50,
+      "TASK_FINISHED": 0,
+      "TASK_KILLED": 0,
+      "TASK_FAILED": 0,
+      "TASK_LOST": 0,
+      "TASK_ERROR": 0,
+      "slave_ids": [
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S4",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S5",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S6",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S7",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S8",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S9",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S10",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S11",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S12",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S13",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S14",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S15",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S0",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S1",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S2",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S3"
+      ]
+    },
+    {
+      "id": "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0005",
+      "name": "calico",
+      "hostname": "10.0.5.32",
+      "pid": "scheduler-ssjvu48-7p5p-so0d-sb0y-np5i2kdpbx5p@10.0.5.32:70474",
+      "used_resources": {
+        "cpus": 4,
+        "gpus": 0,
+        "mem": 4000,
+        "disk": 32000
+      },
+      "offered_resources": {
+        "cpus": 0,
+        "gpus": 0,
+        "mem": 0,
+        "disk": 0
+      },
+      "webui_url": "http://10.0.5.32:8080",
+      "capabilities": [],
+      "active": true,
+      "TASK_STAGING": 0,
+      "TASK_STARTING": 0,
+      "TASK_RUNNING": 50,
+      "TASK_FINISHED": 0,
+      "TASK_KILLED": 0,
+      "TASK_FAILED": 0,
+      "TASK_LOST": 0,
+      "TASK_ERROR": 0,
+      "slave_ids": [
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S2",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S3",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S4",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S5",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S6",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S7",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S8",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S9",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S10",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S11",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S12",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S13",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S14",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S15",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S0",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S1"
+      ]
+    },
+    {
+      "id": "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-0006",
+      "name": "elasticsearch",
+      "hostname": "10.0.6.213",
+      "pid": "scheduler-4jkby2ew-r7d6-29ms-qd7v-tq5kdtf7c03w@10.0.6.213:60934",
+      "used_resources": {
+        "cpus": 4,
+        "gpus": 0,
+        "mem": 4000,
+        "disk": 32000
+      },
+      "offered_resources": {
+        "cpus": 0,
+        "gpus": 0,
+        "mem": 0,
+        "disk": 0
+      },
+      "webui_url": "http://10.0.6.213:8080",
+      "capabilities": [],
+      "active": true,
+      "TASK_STAGING": 0,
+      "TASK_STARTING": 0,
+      "TASK_RUNNING": 50,
+      "TASK_FINISHED": 0,
+      "TASK_KILLED": 0,
+      "TASK_FAILED": 0,
+      "TASK_LOST": 0,
+      "TASK_ERROR": 0,
+      "slave_ids": [
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S0",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S1",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S2",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S3",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S4",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S5",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S6",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S7",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S8",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S9",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S10",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S11",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S12",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S13",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S14",
+        "vgf4w1tg-3d3i-mdu-dt79-qn4apog6m06-S15"
+      ]
+    }
+  ]
+}
