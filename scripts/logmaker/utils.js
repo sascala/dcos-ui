@@ -23,5 +23,12 @@ module.exports = {
 			if (err) return console.log(err)
 			console.log('saved')
 		})
+	},
+	trim: function(object, props) {
+		let copy = Object.assign({}, object)
+		for (let prop of props) {
+			delete copy[prop]
+		}
+		return copy
 	}
 }

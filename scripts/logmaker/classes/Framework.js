@@ -1,4 +1,5 @@
 let utils = require('../utils.js')
+let MarathonTask = require('./MarathonTask.js')
 let Task = require('./Task.js')
 
 class Framework {
@@ -54,13 +55,21 @@ class Framework {
 				this.id
 			))
 		}
-		console.log(tasks.length)
 		return tasks
 	}
 
 	addSlaveId(id) {
 		if (!this.slave_ids.includes(id)) {
 			this.slave_ids.push(id)
+		}
+	}
+
+	// for use in marathon/v2/groups endpoint	
+	getMarathonTask() {
+		if (this.name !== 'marathon') {
+			return new MarathonTask(this.name, this.used_resources)
+		} else {
+			return null
 		}
 	}
 }

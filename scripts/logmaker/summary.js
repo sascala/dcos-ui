@@ -8,6 +8,9 @@ let Framework = require('./classes/Framework.js')
 let Slave = require('./classes/Slave.js')
 let Summary = require('./classes/Summary.js')
 let Task = require('./classes/Task.js')
+let MarathonTask = require('./classes/MarathonTask.js')
+let MarathonGroups = require('./classes/MarathonGroups.js')
+let MesosState = require('./classes/MesosState.js')
 let utils = require('./utils.js')
 
 
@@ -41,6 +44,7 @@ let numSlaves = utils.getRandomInteger(2, 100)
 for (let i = 0; i < numSlaves; i++) {
 	slaves.push(new Slave(tag, slaves.length))
 }
+
 
 
 /************* SCHEDULE ALL TASKS ON THE SLAVES *************/
@@ -90,9 +94,27 @@ while (tasks.length > 0) {
 }
 
 
-/*************** MAKE SUMMARY JSON **************/
+/*************** SUMMARY JSON *******************/
 
 let summary = new Summary(slaves, frameworks)
 summary.write()
+
+/*************** MARATHON GROUPS JSON *************/
+
+let marathonTasks = []
+for (let f of frameworks) {
+	if (f.name === 'marathon') continue 
+	marathonTasks.push(f.getMarathonTask())
+}
+
+let marathonGroups = new MarathonGroups(marathonTasks)
+marathonGroups.write()
+
+/**************** MESOS STATE JSON ****************/
+
+let mesosState = new MesosState(tag, slaves, frameworks)
+mesosState.write()
+
+
 
 

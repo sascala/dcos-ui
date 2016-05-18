@@ -25,10 +25,13 @@ class Slave {
 			disk: 0,
 			mem: 0
 		}
-		this.reserved_resources = [],
-		this.unreserved_resources = [],
-		this.active = true,
-		this.version = '0.27.0',
+		this.reserved_resources = []
+		this.unreserved_resources = []
+		this.attributes = {
+			public_ip: 'true'
+		}
+		this.active = true
+		this.version = '0.27.0'
 		this.TASK_STAGING = 0,
 		this.TASK_STARTING = 0,
 		this.TASK_RUNNING = 0,
