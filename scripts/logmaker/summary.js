@@ -11,6 +11,10 @@ let Task = require('./classes/Task.js')
 let MarathonTask = require('./classes/MarathonTask.js')
 let MarathonGroups = require('./classes/MarathonGroups.js')
 let MesosState = require('./classes/MesosState.js')
+let Units = require('./classes/Units.js')
+let Unit = require('./classes/Unit.js')
+let Nodes = require('./classes/Nodes.js')
+let Node = require('./classes/Node.js')
 let utils = require('./utils.js')
 
 
@@ -67,7 +71,7 @@ while (tasks.length > 0) {
 		slaveIndex += 1
 		if (slaveIndex >= slaves.length) {
 			slaveIndex = 0
-		} 
+		}
 		slave = slaves[slaveIndex]
 
 		// no slaves have space for task, make a new slave and schedule task on it
@@ -90,7 +94,7 @@ while (tasks.length > 0) {
 	slaveIndex += 1
 	if (slaveIndex >= slaves.length) {
 		slaveIndex = 0
-	} 
+	}
 }
 
 
@@ -103,7 +107,7 @@ summary.write()
 
 let marathonTasks = []
 for (let f of frameworks) {
-	if (f.name === 'marathon') continue 
+	if (f.name === 'marathon') continue
 	marathonTasks.push(f.getMarathonTask())
 }
 
@@ -115,6 +119,45 @@ marathonGroups.write()
 let mesosState = new MesosState(tag, slaves, frameworks)
 mesosState.write()
 
+/**************** NODE HEALTH ****************/
+
+// /nodes (master and all slaves)
+
+let n = []
+let master = {
+	host_ip: mesosState.hostname,
+	health: 0,
+	role: 'master'
+}
+n.push(master)
+for (let ip of slaves.map((s) => s.hostname)) { // slaves
+	n.push({
+		host_ip: ip,
+		health: 0,
+		role: 'agent'
+	})
+}
+
+let nodes = new Nodes(n)
+nodes.write()
+
+
+// nodes/<ip-of-node> (for now pick master)
+
+let node = new Node(master)
+node.write()
+
+
+// nodes/<ip-of-node>/units (also pick master)
+
+let units = new Units(mesosState.hostname)
+units.write()
+
+
+// node/<ip-of-node>/units/<unit-id> (also pick master first unit)
+
+let unit = new Unit(mesosState.hostname)
+unit.write()
 
 
 
