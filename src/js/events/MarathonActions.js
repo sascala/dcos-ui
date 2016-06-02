@@ -16,7 +16,7 @@ var AppDispatcher = require('./AppDispatcher');
 var Config = require('../config/Config');
 var RequestUtil = require('../utils/RequestUtil');
 
-module.exports = {
+let MarathonActions = {
 
   createGroup: function (data) {
     RequestUtil.json({
@@ -147,3 +147,36 @@ module.exports = {
   }
 
 };
+
+if (Config.useFixtures) {
+  let fetchGroups = require('../../../scripts/logmaker/out/marathonGroups.json');
+
+  if (!global.actionTypes) {
+    global.actionTypes = {};
+  }
+
+  global.actionTypes.MarathonActions = {
+    createGroup: {
+      event: 'success', success: {response: []}
+    },
+    fetchGroups: {event: 'success', success: {response: fetchGroups}},
+    fetchDeployments: {
+      event: 'success', success: {response: []}
+    },
+    fetchServiceVersion: {
+      event: 'success', success: {response: []}
+    },
+    fetchServiceVersions: {
+      event: 'success', success: {response: []}
+    }
+  };
+
+  Object.keys(global.actionTypes.MarathonActions).forEach(function (method) {
+    MarathonActions[method] = RequestUtil.stubRequest(
+      MarathonActions, 'MarathonActions', method
+    );
+  });
+}
+
+module.exports = MarathonActions;
+

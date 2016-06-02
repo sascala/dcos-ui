@@ -78,7 +78,6 @@ function requestFromMesos(resolve, reject) {
 }
 
 var MesosSummaryActions = {
-
   fetchSummary: RequestUtil.debounceOnError(
     Config.getRefreshRate(),
     function (resolve, reject) {
@@ -93,7 +92,26 @@ var MesosSummaryActions = {
     },
     {delayAfterCount: Config.delayAfterErrorCount}
   )
-
 };
+
+if (Config.useFixtures) {
+  let fetchSummary = require('../../../scripts/logmaker/out/summary.json');
+
+  if (!global.actionTypes) {
+    global.actionTypes = {};
+  }
+
+  global.actionTypes.MesosSummaryActions = {
+    fetchSummary: {
+      event: 'success', success: {response: fetchSummary}
+    }
+  };
+
+  Object.keys(global.actionTypes.MesosSummaryActions).forEach(function (method) {
+    MesosSummaryActions[method] = RequestUtil.stubRequest(
+      MesosSummaryActions, 'MesosSummaryActions', method
+    );
+  });
+}
 
 module.exports = MesosSummaryActions;
