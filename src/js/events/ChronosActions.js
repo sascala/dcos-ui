@@ -1,6 +1,8 @@
 import {RequestUtil} from 'mesosphere-shared-reactjs';
 
 import {
+  REQUEST_CHRONOS_JOB_DELETE_ERROR,
+  REQUEST_CHRONOS_JOB_DELETE_SUCCESS,
   REQUEST_CHRONOS_JOBS_ERROR,
   REQUEST_CHRONOS_JOBS_ONGOING,
   REQUEST_CHRONOS_JOBS_SUCCESS
@@ -46,6 +48,27 @@ const ChronosActions = {
     },
     {delayAfterCount: Config.delayAfterErrorCount}
   ),
+
+  deleteJob: function (jobID) {
+    RequestUtil.json({
+      url: `${Config.rootUrl}/chronos/jobs/${jobID}`,
+      method: 'DELETE',
+      success: function () {
+        AppDispatcher.handleServerAction({
+          type: REQUEST_CHRONOS_JOB_DELETE_SUCCESS,
+          jobID
+        });
+      },
+      error: function (xhr) {
+        AppDispatcher.handleServerAction({
+          type: REQUEST_CHRONOS_JOB_DELETE_ERROR,
+          data: RequestUtil.parseResponseBody(xhr),
+          jobID,
+          xhr
+        });
+      }
+    });
+  }
 };
 
 if (Config.useFixtures) {
@@ -58,6 +81,9 @@ if (Config.useFixtures) {
   global.actionTypes.ChronosActions = {
     fetchJobs: {
       event: 'success', success: {response: jobsFixture}
+    },
+    deleteJob: {
+      event: 'success', success: {response: {}}
     }
   };
 

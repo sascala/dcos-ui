@@ -3,6 +3,8 @@ import {EventEmitter} from 'events';
 import AppDispatcher from '../events/AppDispatcher';
 import ChronosActions  from '../events/ChronosActions';
 import {
+  CHRONOS_JOB_DELETE_ERROR,
+  CHRONOS_JOB_DELETE_SUCCESS,
   CHRONOS_JOBS_CHANGE,
   CHRONOS_JOBS_ERROR,
   VISIBILITY_CHANGE
@@ -10,6 +12,8 @@ import {
 import Config from '../config/Config';
 import JobTree from '../structs/JobTree';
 import {
+  REQUEST_CHRONOS_JOB_DELETE_ERROR,
+  REQUEST_CHRONOS_JOB_DELETE_SUCCESS,
   REQUEST_CHRONOS_JOBS_ERROR,
   REQUEST_CHRONOS_JOBS_ONGOING,
   REQUEST_CHRONOS_JOBS_SUCCESS,
@@ -51,6 +55,12 @@ class ChronosStore extends EventEmitter {
         return false;
       }
       switch (action.type) {
+        case REQUEST_CHRONOS_JOB_DELETE_ERROR:
+          this.emit(CHRONOS_JOB_DELETE_ERROR, action.jobID);
+          break;
+        case REQUEST_CHRONOS_JOB_DELETE_SUCCESS:
+          this.emit(CHRONOS_JOB_DELETE_SUCCESS, action.jobID);
+          break;
         case REQUEST_CHRONOS_JOBS_SUCCESS:
           this.data.jobTree = action.data;
           this.emit(CHRONOS_JOBS_CHANGE);
@@ -70,6 +80,10 @@ class ChronosStore extends EventEmitter {
       VISIBILITY_CHANGE,
       this.onVisibilityStoreChange.bind(this)
     );
+  }
+
+  deleteJob(jobID) {
+    ChronosActions.deleteJob(jobID);
   }
 
   addChangeListener(eventName, callback) {

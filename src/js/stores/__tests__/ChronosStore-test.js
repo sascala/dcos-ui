@@ -46,7 +46,7 @@ describe('ChronosStore', function () {
 
   describe('dispatcher', function () {
 
-    it('emits event after success event is dispatched', function () {
+    it('emits event after #fetchJobs success event is dispatched', function () {
       let changeHandler = jasmine.createSpy('changeHandler');
       ChronosStore.addChangeListener(
         EventTypes.CHRONOS_JOBS_CHANGE,
@@ -61,7 +61,7 @@ describe('ChronosStore', function () {
       expect(changeHandler).toHaveBeenCalled();
     });
 
-    it('emits event after error event is dispatched', function () {
+    it('emits event after #fetchJobs error event is dispatched', function () {
       let changeHandler = jasmine.createSpy('changeHandler');
       ChronosStore.addChangeListener(
         EventTypes.CHRONOS_JOBS_ERROR,
@@ -71,7 +71,43 @@ describe('ChronosStore', function () {
       AppDispatcher.handleServerAction({
         type: ActionTypes.REQUEST_CHRONOS_JOBS_ERROR
       });
+
+      expect(changeHandler).toHaveBeenCalled();
     });
+
+    it('emits event after #deleteJob success event is dispatched',
+      function () {
+        let changeHandler = jasmine.createSpy('changeHandler');
+        ChronosStore.addChangeListener(
+          EventTypes.CHRONOS_JOB_DELETE_SUCCESS,
+          changeHandler
+        );
+
+        AppDispatcher.handleServerAction({
+          type: ActionTypes.REQUEST_CHRONOS_JOB_DELETE_SUCCESS,
+          jobID: 'foo'
+        });
+
+        expect(changeHandler).toHaveBeenCalled();
+        expect(changeHandler).toHaveBeenCalledWith('foo');
+      });
+
+    it('emits event after #deleteJob error event is dispatched',
+      function () {
+        let changeHandler = jasmine.createSpy('changeHandler');
+        ChronosStore.addChangeListener(
+          EventTypes.CHRONOS_JOB_DELETE_ERROR,
+          changeHandler
+        );
+
+        AppDispatcher.handleServerAction({
+          type: ActionTypes.REQUEST_CHRONOS_JOB_DELETE_ERROR,
+          jobID: 'foo'
+        });
+
+        expect(changeHandler).toHaveBeenCalled();
+        expect(changeHandler).toHaveBeenCalledWith('foo');
+      });
 
   });
 
