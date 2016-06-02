@@ -1,6 +1,8 @@
 import {RequestUtil} from 'mesosphere-shared-reactjs';
 
 import {
+  REQUEST_CHRONOS_JOB_RUN_ERROR,
+  REQUEST_CHRONOS_JOB_RUN_SUCCESS,
   REQUEST_CHRONOS_JOBS_ERROR,
   REQUEST_CHRONOS_JOBS_ONGOING,
   REQUEST_CHRONOS_JOBS_SUCCESS
@@ -46,6 +48,26 @@ const ChronosActions = {
     },
     {delayAfterCount: Config.delayAfterErrorCount}
   ),
+
+  runJob: function (jobID) {
+    RequestUtil.json({
+      url: `${Config.rootUrl}/jobs/${jobID}/runs`,
+      method: 'POST',
+      data: {},
+      success: function () {
+        AppDispatcher.handleServerAction({
+          type: REQUEST_CHRONOS_JOB_RUN_SUCCESS
+        });
+      },
+      error: function (xhr) {
+        AppDispatcher.handleServerAction({
+          type: REQUEST_CHRONOS_JOB_RUN_ERROR,
+          data: RequestUtil.parseResponseBody(xhr),
+          xhr
+        });
+      }
+    });
+  }
 };
 
 if (Config.useFixtures) {
@@ -58,6 +80,9 @@ if (Config.useFixtures) {
   global.actionTypes.ChronosActions = {
     fetchJobs: {
       event: 'success', success: {response: jobsFixture}
+    },
+    runJob: {
+      event: 'success', success: {response: {}}
     }
   };
 

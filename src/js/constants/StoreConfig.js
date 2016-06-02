@@ -5,6 +5,8 @@ import {
   AUTH_USER_LOGOUT_SUCCESS,
   AUTH_USER_LOGOUT_ERROR,
 
+  CHRONOS_JOB_RUN_ERROR,
+  CHRONOS_JOB_RUN_SUCCESS,
   CHRONOS_JOBS_CHANGE,
   CHRONOS_JOBS_ERROR,
 
@@ -124,6 +126,8 @@ const ListenersDescription = {
   chronos: {
     store: ChronosStore,
     events: {
+      jobRunError: CHRONOS_JOB_RUN_ERROR,
+      jobRunSuccess: CHRONOS_JOB_RUN_SUCCESS,
       change: CHRONOS_JOBS_CHANGE,
       error: CHRONOS_JOBS_ERROR
     },
