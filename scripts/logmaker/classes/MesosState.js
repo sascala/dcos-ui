@@ -6,7 +6,7 @@ function _transformSlaves(slaves) {
 	let slavesBasic = []
 	for (let slave of slaves) {
 		let trimmed = utils.trim(slave, deleteList)
-		slavesBasic.push(trimmed)	
+		slavesBasic.push(trimmed)
 	}
 
 	return slavesBasic
@@ -17,7 +17,7 @@ function _transformFrameworks(frameworks) {
 	for (let framework of frameworks) {
 		// remove old props
 		let trimmed = utils.trim(framework, deleteList)
-		
+
 		// add new props
 		trimmed.failover_timeout = 604800
 		trimmed.checkpoint = true
@@ -25,7 +25,6 @@ function _transformFrameworks(frameworks) {
 		trimmed.registered_time = Date.now()
 		trimmed.unregistered_time = 0
 		trimmed.principal = trimmed.name
-		trimmed.tasks = [] // TODO, this might be a thing i can't make empty array
 		trimmed.completed_tasks = []
 		trimmed.offers = []
 		trimmed.executors = []

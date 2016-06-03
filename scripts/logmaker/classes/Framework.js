@@ -7,7 +7,7 @@ class Framework {
 		this.id = tag + '0000'.substring((number + '').length) + number
 		this.name = name
 		this.hostname = utils.getIp4Address()
-		this.pid =  'scheduler-' + 
+		this.pid =  'scheduler-' +
 					new Array(8).fill('').map(() => utils.getChar()).join('') + '-' +
 					new Array(4).fill('').map(() => utils.getChar()).join('') + '-' +
 					new Array(4).fill('').map(() => utils.getChar()).join('') + '-' +
@@ -38,24 +38,22 @@ class Framework {
 		this.TASK_LOST = 0,
 		this.TASK_ERROR = 0,
 		this.slave_ids = []
+
+		let tasks = []
+		for (let i = 0; i < this.getNumberTasks(); i++) {
+			tasks.push(new Task(
+				options.cpus / this.getNumberTasks(),
+				options.gpus / this.getNumberTasks(),
+				options.mem / this.getNumberTasks(),
+				options.disk / this.getNumberTasks(),
+				this.id
+			))
+		}
+		this.tasks = tasks;
 	}
 
 	getNumberTasks() {
 		return this.TASK_STAGING + this.TASK_STARTING + this.TASK_RUNNING + this.TASK_FINISHED
-	}
-
-	getTasks() {
-		let tasks = []
-		for (let i = 0; i < this.getNumberTasks(); i++) {
-			tasks.push(new Task(
-				this.used_resources.cpus / this.getNumberTasks(),
-				this.used_resources.gpus / this.getNumberTasks(),
-				this.used_resources.mem / this.getNumberTasks(),
-				this.used_resources.disk / this.getNumberTasks(),
-				this.id
-			))
-		}
-		return tasks
 	}
 
 	addSlaveId(id) {
@@ -64,7 +62,7 @@ class Framework {
 		}
 	}
 
-	// for use in marathon/v2/groups endpoint	
+	// for use in marathon/v2/groups endpoint
 	getMarathonTask() {
 		if (this.name !== 'marathon') {
 			return new MarathonTask(this.name, this.used_resources)

@@ -1,7 +1,5 @@
 /*
-Generate randomized JSON file in the structure of:
-	_fixtures/1-service-with-executor-task/summary.json
-For use in MesosSummaryActions.js
+generate fixture data for relevant action creaters
 */
 
 let Framework = require('./classes/Framework.js')
@@ -55,7 +53,7 @@ for (let i = 0; i < numSlaves; i++) {
 
 let tasks = []
 for (let f of frameworks) {
-	tasks = tasks.concat(f.getTasks())
+	tasks = tasks.concat(f.tasks)
 }
 
 
@@ -86,7 +84,7 @@ while (tasks.length > 0) {
 	slave.scheduleTask(task)
 
 	for (let f of frameworks) {
-		if (f.id === task.frameworkId && !f.slave_ids.includes(slave.id)) {
+		if (f.id === task.framework_id && !f.slave_ids.includes(slave.id)) {
 			f.slave_ids.push(slave.id)
 		}
 	}

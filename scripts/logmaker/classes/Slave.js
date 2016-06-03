@@ -44,21 +44,24 @@ class Slave {
 	}
 
 	hasSpaceForTask(task) {
-		return  task.cpus <= (this.resources.cpus - this.used_resources.cpus) &&
-				task.gpus <= (this.resources.gpus - this.used_resources.gpus) &&
-				task.mem <= (this.resources.mem - this.used_resources.mem)   &&
-				task.disk <= (this.resources.disk - this.used_resources.disk)
+		return  task.resources.cpus <= (this.resources.cpus - this.used_resources.cpus) &&
+				task.resources.gpus <= (this.resources.gpus - this.used_resources.gpus) &&
+				task.resources.mem <= (this.resources.mem - this.used_resources.mem)   &&
+				task.resources.disk <= (this.resources.disk - this.used_resources.disk)
 	}
 
 	scheduleTask(task) {
-		this.used_resources.cpus += task.cpus
-		this.used_resources.gpus += task.gpus
-		this.used_resources.mem += task.mem
-		this.used_resources.disk += task.disk
+		this.used_resources.cpus += task.resources.cpus
+		this.used_resources.gpus += task.resources.gpus
+		this.used_resources.mem += task.resources.mem
+		this.used_resources.disk += task.resources.disk
 		this.TASK_RUNNING += 1
 
-		if (!this.framework_ids.includes(task.frameworkId)) {
-			this.framework_ids.push(task.frameworkId)
+		// update the slave id on the task
+		task.slave_id = this.id
+
+		if (!this.framework_ids.includes(task.framework_id)) {
+			this.framework_ids.push(task.framework_id)
 		}
 	}
 }
