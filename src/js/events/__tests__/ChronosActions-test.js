@@ -65,7 +65,7 @@ describe('ChronosActions', function () {
 
     it('fetches data from the correct URL', function () {
       expect(this.configuration.url)
-        .toEqual(`${Config.rootUrl}/chronos/jobs/foo`);
+        .toEqual(`${Config.rootUrl}/chronos/jobs/foo?stopCurrentJobRuns=false`);
     });
 
     it('fetches data with the correct method', function () {

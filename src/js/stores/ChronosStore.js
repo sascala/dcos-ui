@@ -82,8 +82,8 @@ class ChronosStore extends EventEmitter {
     );
   }
 
-  deleteJob(jobID) {
-    ChronosActions.deleteJob(jobID);
+  deleteJob(jobID, stopCurrentJobRuns) {
+    ChronosActions.deleteJob(jobID, stopCurrentJobRuns);
   }
 
   addChangeListener(eventName, callback) {

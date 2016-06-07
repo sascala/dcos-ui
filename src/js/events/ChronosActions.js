@@ -49,9 +49,10 @@ const ChronosActions = {
     {delayAfterCount: Config.delayAfterErrorCount}
   ),
 
-  deleteJob: function (jobID) {
+  deleteJob: function (jobID, stopCurrentJobRuns = false) {
     RequestUtil.json({
-      url: `${Config.rootUrl}/chronos/jobs/${jobID}`,
+      url: `${Config.rootUrl}/chronos/jobs/${jobID}` +
+        `?stopCurrentJobRuns=${stopCurrentJobRuns}`,
       method: 'DELETE',
       success: function () {
         AppDispatcher.handleServerAction({
