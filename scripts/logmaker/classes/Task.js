@@ -1,8 +1,8 @@
 class Task {
-	constructor(cpus, gpus, mem, disk, framework_id) {
-    this.id = 'broker'
-    this.name = 'broker'
-    this.framework_id = framework_id;
+	constructor(cpus, gpus, mem, disk, framework_id, task_id) {
+    this.id = task_id
+    this.name = task_id
+    this.framework_id = framework_id
     this.executor_id = ''
     this.slave_id = ''
     this.resources = {

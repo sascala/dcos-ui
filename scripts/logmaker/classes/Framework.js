@@ -3,7 +3,7 @@ let MarathonTask = require('./MarathonTask.js')
 let Task = require('./Task.js')
 
 class Framework {
-	constructor(tag, number, name, options = {cpus: 4, gpus: 0, mem: 4000, disk: 32000, tasks: 50}) {
+	constructor(tag, number, name, options = {cpus: 8, gpus: 0, mem: 4000, disk: 32000, tasks: 50}) {
 		this.id = tag + '0000'.substring((number + '').length) + number
 		this.name = name
 		this.hostname = utils.getIp4Address()
@@ -31,7 +31,7 @@ class Framework {
 		this.active = true,
 		this.TASK_STAGING = 0,
 		this.TASK_STARTING = 0,
-	  	this.TASK_RUNNING = options.tasks,
+	  this.TASK_RUNNING = options.tasks,
 		this.TASK_FINISHED = 0,
 		this.TASK_KILLED = 0,
 		this.TASK_FAILED = 0,
@@ -39,14 +39,16 @@ class Framework {
 		this.TASK_ERROR = 0,
 		this.slave_ids = []
 
+		// TODO, make tasks different size
 		let tasks = []
 		for (let i = 0; i < this.getNumberTasks(); i++) {
 			tasks.push(new Task(
-				options.cpus / this.getNumberTasks(),
-				options.gpus / this.getNumberTasks(),
-				options.mem / this.getNumberTasks(),
-				options.disk / this.getNumberTasks(),
-				this.id
+				utils.roundTenth(options.cpus / this.getNumberTasks()),
+				utils.roundTenth(options.gpus / this.getNumberTasks()),
+				utils.roundTenth(options.mem / this.getNumberTasks()),
+				utils.roundTenth(options.disk / this.getNumberTasks()),
+				this.id, // framework id
+				this.name + i // id of the task, will be unique
 			))
 		}
 		this.tasks = tasks;

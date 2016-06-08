@@ -12,7 +12,7 @@ module.exports = {
 		return possible.charAt(this.getRandomInteger(0, possible.length))
 	},
 	getTag: function() {
-		return  new Array(8).fill('').map(() => this.getChar()).join('') + '-' + 
+		return  new Array(8).fill('').map(() => this.getChar()).join('') + '-' +
 				new Array(4).fill('').map(() => this.getChar()).join('') + '-' +
 				new Array(4).fill('').map(() => this.getChar()).join('') + '-' +
 				new Array(4).fill('').map(() => this.getChar()).join('') + '-' +
@@ -30,5 +30,8 @@ module.exports = {
 			delete copy[prop]
 		}
 		return copy
+	},
+	roundTenth: function(num) {
+		return Math.round(num * 10) / 10;
 	}
 }
