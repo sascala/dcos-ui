@@ -3,7 +3,7 @@ let MarathonTask = require('./MarathonTask.js')
 let Task = require('./Task.js')
 
 class Framework {
-	constructor(tag, number, name, options = {cpus: 8, gpus: 0, mem: 4000, disk: 32000, tasks: 50}) {
+	constructor(tag, number, name, options = {cpus: 6.4, gpus: 0, mem: 4000, disk: 32000, tasks: 10}) {
 		this.id = tag + '0000'.substring((number + '').length) + number
 		this.name = name
 		this.hostname = utils.getIp4Address()
@@ -39,18 +39,53 @@ class Framework {
 		this.TASK_ERROR = 0,
 		this.slave_ids = []
 
-		// TODO, make tasks different size
+		// make big tasks, medium tasks, and small tasks. 50 tasks total
 		let tasks = []
-		for (let i = 0; i < this.getNumberTasks(); i++) {
-			tasks.push(new Task(
-				utils.roundTenth(options.cpus / this.getNumberTasks()),
-				utils.roundTenth(options.gpus / this.getNumberTasks()),
-				utils.roundTenth(options.mem / this.getNumberTasks()),
-				utils.roundTenth(options.disk / this.getNumberTasks()),
-				this.id, // framework id
-				this.name + i // id of the task, will be unique
+
+		let cpuEven = options.cpus / this.getNumberTasks()
+		let gpuEven = options.gpus / this.getNumberTasks()
+		let memEven = options.mem / this.getNumberTasks()
+		let diskEven = options.disk / this.getNumberTasks()
+
+		// big tasks, they use double their even share of things
+		// 2 are big, using 4 shares of resource for each
+		for (let i = 0; i < 2; i++) {
+				tasks.push(new Task(
+					utils.roundTenth(cpuEven * 2),
+					utils.roundTenth(gpuEven * 2),
+					utils.roundTenth(memEven * 2),
+					utils.roundTenth(diskEven * 2),
+					this.id, // framework id
+					this.name + i // id of the task, will be unique
 			))
 		}
+
+		// normal tasks
+		// 4 are normal, using 4 shares of resource
+		for (let i = 2; i < 6; i++) {
+				tasks.push(new Task(
+					utils.roundTenth(cpuEven),
+					utils.roundTenth(gpuEven),
+					utils.roundTenth(memEven),
+					utils.roundTenth(diskEven),
+					this.id, // framework id
+					this.name + i // id of the task, will be unique
+			))
+		}
+
+		// small tasks
+		// 4 are small, using last 2 shares of resource
+		for (let i = 6; i < 10; i++) {
+				tasks.push(new Task(
+					utils.roundTenth(cpuEven / 2),
+					utils.roundTenth(gpuEven / 2),
+					utils.roundTenth(memEven / 2),
+					utils.roundTenth(diskEven / 2),
+					this.id, // framework id
+					this.name + i // id of the task, will be unique
+			))
+		}
+
 		this.tasks = tasks;
 	}
 

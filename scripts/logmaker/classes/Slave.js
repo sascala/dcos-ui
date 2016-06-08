@@ -1,7 +1,7 @@
 var utils = require('../utils.js')
 
 class Slave {
-	constructor(tag, number, options = {cpus: 8, gpus: 2, mem: 16000, disk: 256000}) {
+	constructor(tag, number, options = {cpus: 6.4, gpus: 2, mem: 16000, disk: 256000}) {
 		this.id = tag + 'S' + number
 		this.hostname = utils.getIp4Address()
 		this.pid = 'slave(1)@' + this.hostname + ':5051'

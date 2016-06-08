@@ -1,5 +1,14 @@
 /*
-generate fixture data for relevant action creaters
+Generate fixture data.
+
+Make random number of frameworks, with varying number of tasks each.
+A random number of slaves will be created.
+The tasks are gaurenteed to fit on the slaves because more are created if not enough space.
+
+User input:
+- # frameworks
+- degree of varience of framework size
+- variance of task size
 */
 
 let Framework = require('./classes/Framework.js')
@@ -14,6 +23,11 @@ let Unit = require('./classes/Unit.js')
 let Nodes = require('./classes/Nodes.js')
 let Node = require('./classes/Node.js')
 let utils = require('./utils.js')
+
+
+/************** CLI ARGS *****************/
+let numberSlaves = process.argv[2]
+let numberFrameworks = Math.min(process.argv[3], 10) // must be less than 10
 
 
 
@@ -31,8 +45,7 @@ frameworks.push(new Framework(tag, 0, 'marathon', {
 }))
 
 const names = ['arangodb', 'cassandra', 'chronos', 'jenkins', 'kafka', 'spark', 'elasticsearch', 'calico', 'hdfs', 'mysql']
-let numFramework = utils.getRandomInteger(1, names.length)
-for (let i = 0; i < numFramework; i++) {
+for (let i = 0; i < numberFrameworks; i++) {
 	let index = utils.getRandomInteger(0, names.length - 1)
 	frameworks.push(new Framework(tag, frameworks.length, names[index]))
 	names.splice(index, 1)
@@ -42,8 +55,7 @@ for (let i = 0; i < numFramework; i++) {
 /************** MAKE SLAVES **************/
 
 let slaves = []
-let numSlaves = utils.getRandomInteger(2, 100)
-for (let i = 0; i < numSlaves; i++) {
+for (let i = 0; i < numberSlaves; i++) {
 	slaves.push(new Slave(tag, slaves.length))
 }
 
