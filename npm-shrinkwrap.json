@@ -5738,7 +5738,7 @@
     },
     "svg-react-loader": {
       "version": "0.3.5",
-      "from": "svg-react-loader@>=0.3.5 <0.4.0",
+      "from": "svg-react-loader@0.3.5",
       "resolved": "https://registry.npmjs.org/svg-react-loader/-/svg-react-loader-0.3.5.tgz"
     },
     "svgo": {
