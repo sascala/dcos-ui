@@ -108,6 +108,10 @@ module.exports = class Service extends Item {
     return this.get('ports');
   }
 
+  getPortDefinitions() {
+    return this.get('portDefinitions');
+  }
+
   getResources() {
     return {
       cpus: this.get('cpus'),
