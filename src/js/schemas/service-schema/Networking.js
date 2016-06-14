@@ -21,8 +21,27 @@ const Networking = {
       type: 'array',
       duplicable: true,
       addLabel: 'Add an endpoint',
-      getter: function () {
-        return null;
+      getter: function (service) {
+        let portMappings = service.getPortDefinitions();
+
+        if (portMappings == null) {
+          let container = service.getContainerSettings();
+          if (container && container.docker && container.docker.portMappings) {
+            portMappings = container.docker.portMappings;
+          }
+
+          if (portMappings == null) {
+            return null;
+          }
+        }
+
+        return portMappings.map(function (portMapping) {
+          return {
+            lbPort: portMapping.hostPort || portMapping.containerPort,
+            name: portMapping.name,
+            protocol: portMapping.protocol
+          };
+        });
       },
       itemShape: {
         properties: {
