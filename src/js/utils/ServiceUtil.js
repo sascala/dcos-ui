@@ -163,6 +163,8 @@ const ServiceUtil = {
       appDefinition.container = containerSettings;
     }
 
+    appDefinition.portDefinitions = service.getPortDefinitions();
+
     Object.keys(appDefinition).forEach(function (key) {
       if (appDefinition[key] == null) {
         delete appDefinition[key];
