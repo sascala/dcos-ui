@@ -24,7 +24,13 @@ const ServiceUtil = {
     let definition = {};
 
     if (formModel != null) {
-      let {general, optional, containerSettings, labels} = formModel;
+      let {
+        general,
+        optional,
+        containerSettings,
+        labels,
+        networking
+      } = formModel;
 
       if (general != null) {
         definition.id = general.id;
@@ -88,6 +94,38 @@ const ServiceUtil = {
           memo[item.key] = item.value;
           return memo;
         }, {});
+      }
+
+      if (networking != null) {
+        if (networking.ports != null) {
+          if (containerSettings != null && containerSettings.image != null) {
+            definition.container.docker.portMappings = networking.ports.map(function (port) {
+              let portMapping = {
+                name: port.name,
+                protocol: port.protocol || 'tcp'
+              };
+
+              if (/host/.test(networking.networkType) ||
+                networking.networkType == null) {
+                portMapping.hostPort = parseInt(port.lbPort, 10);
+              } else if (/bridge/.test(networking.networkType)) {
+                portMapping.containerPort = parseInt(port.lbPort, 10);
+              }
+
+              return portMapping;
+            });
+          } else {
+            definition.portDefinitions = networking.ports.map(function (port) {
+              let portMapping = {
+                port: parseInt(port.lbPort, 10),
+                name: port.name,
+                protocol: port.protocol || 'tcp'
+              };
+
+              return portMapping;
+            });
+          }
+        }
       }
     }
     return new Service(definition);
