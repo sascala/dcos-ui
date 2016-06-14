@@ -5,6 +5,7 @@ import React from 'react';
 import ContainerSettings from './service-schema/ContainerSettings';
 import General from './service-schema/General';
 import Labels from './service-schema/Labels';
+import Networking from './service-schema/Networking';
 import Optional from './service-schema/Optional';
 
 let ServiceSchema = {
@@ -12,6 +13,7 @@ let ServiceSchema = {
   properties: {
     general: General,
     containerSettings: ContainerSettings,
+    networking: Networking,
     optional: Optional,
     labels: Labels
   },
