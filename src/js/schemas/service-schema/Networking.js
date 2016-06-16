@@ -5,11 +5,12 @@ const Networking = {
   properties: {
     networkType: {
       fieldType: 'select',
+      default: 'host',
       options: [
-        'Host (Default)',
+        {html: 'Host (Default)', id: 'host'},
         'Bridge',
-        'Virtual Network: Dev',
-        'Virtual Network: Prod'
+        {html: 'Virtual Network: Dev', id: 'dev'},
+        {html: 'Virtual Network: Prod', id: 'prod'}
       ],
       getter: function () {
         return null;
@@ -57,6 +58,7 @@ const Networking = {
             title: 'Protocol',
             type: 'string',
             fieldType: 'select',
+            default: 'tcp',
             options: ['tcp', 'udp', 'udp,tcp']
           },
           discovery: {
