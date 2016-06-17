@@ -66,11 +66,11 @@ class TabForm extends React.Component {
 
     if (this.isValidated) {
       this.props.onSubmit(this.model);
+      return this.model;
     } else {
       this.props.onError();
+      return false;
     }
-
-    return this.model;
   }
 
   buildModel() {
