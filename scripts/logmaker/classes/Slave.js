@@ -51,10 +51,11 @@ class Slave {
 	}
 
 	scheduleTask(task) {
-		this.used_resources.cpus += task.resources.cpus
-		this.used_resources.gpus += task.resources.gpus
-		this.used_resources.mem += task.resources.mem
-		this.used_resources.disk += task.resources.disk
+		this.used_resources.cpus = utils.roundTenth(task.resources.cpus + this.used_resources.cpus)
+		this.used_resources.gpus = utils.roundTenth(task.resources.gpus + this.used_resources.gpus)
+		this.used_resources.mem = utils.roundTenth(task.resources.mem + this.used_resources.mem)
+		this.used_resources.disk = utils.roundTenth(task.resources.disk + this.used_resources.disk)
+
 		this.TASK_RUNNING += 1
 
 		// update the slave id on the task
