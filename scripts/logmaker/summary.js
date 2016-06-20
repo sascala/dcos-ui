@@ -88,7 +88,7 @@ while (tasks.length > 0) {
 		if (slaveIndex === start) {
 			let emptySlave = new Slave(tag, slaves.length)
 			slaves.push(emptySlave)
-			let slave = emptySlave
+			slave = emptySlave
 			break;
 		}
 	}
