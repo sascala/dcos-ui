@@ -115,15 +115,23 @@ const ServiceUtil = {
               return portMapping;
             });
           } else {
-            definition.portDefinitions = networking.ports.map(function (port) {
-              let portMapping = {
-                port: parseInt(port.lbPort, 10),
-                name: port.name,
-                protocol: port.protocol || 'tcp'
-              };
+            // Avoid specifying an empty portDefinitions by default
+            if (networking.ports.length > 0) {
+              definition.portDefinitions = networking.ports.map(function (port) {
+                let portMapping = {port: 0, protocol: 'tcp'};
+                if (port.discovery === true) {
+                  portMapping.port = parseInt(port.lbPort || 0, 10);
+                }
+                if (port.protocol != null) {
+                  portMapping.protocol = port.protocol;
+                }
+                if (port.name != null) {
+                  portMapping.name = port.name;
+                }
 
-              return portMapping;
-            });
+                return portMapping;
+              });
+            }
           }
         }
       }
