@@ -4,12 +4,12 @@ import React from 'react';
 
 const General = {
   title: 'Docker Container',
-  description: 'Configure your job settings',
+  description: 'Configure your job settings.',
   type: 'object',
   properties: {
     image: {
       title: 'image',
-      description: 'Name of your Docker image',
+      description: 'Name of your Docker image.',
       type: 'string',
       getter: function (job) {
         return job.getDocker().image;
