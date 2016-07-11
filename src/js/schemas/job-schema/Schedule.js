@@ -4,12 +4,12 @@ import React from 'react';
 
 const General = {
   title: 'Schedule',
-  description: 'Set time and date for the job to run',
+  description: 'Set time and date for the job to run.',
   type: 'object',
   properties: {
     id: {
       title: 'ID',
-      description: 'The job ID',
+      description: 'The job ID.',
       type: 'string',
       getter: function (job) {
         let [schedule = {}] = job.getSchedules();
@@ -19,7 +19,7 @@ const General = {
     },
     cron: {
       title: 'CRON Schedule',
-      description: 'Enter your schedule in CRON format, e.g. [0 20 * * *]',
+      description: 'Enter your schedule in CRON format, e.g. [0 20 * * *].',
       type: 'string',
       getter: function (job) {
         let [schedule = {}] = job.getSchedules();
@@ -29,7 +29,7 @@ const General = {
     },
     timezone: {
       title: 'Time Zone',
-      description: 'Enter time zone in TZ format, e.g. [America/New_York]',
+      description: 'Enter time zone in TZ format, e.g. [America/New_York].',
       type: 'string',
       getter: function (job) {
         let [schedule = {}] = job.getSchedules();
