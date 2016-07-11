@@ -4,7 +4,7 @@ import React from 'react';
 
 const General = {
   title: 'General',
-  description: 'Configure your job settings',
+  description: 'Configure your job settings.',
   type: 'object',
   properties: {
     id: {
@@ -17,7 +17,7 @@ const General = {
     },
     description: {
       title: 'Description',
-      description: 'Job description',
+      description: 'Job description.',
       type: 'string',
       getter: function (job) {
         return job.getDescription();
@@ -25,7 +25,7 @@ const General = {
     },
     cpus: {
       title: 'CPUs',
-      description: 'The amount of CPUs the job requires',
+      description: 'The amount of CPUs the job requires.',
       type:'number',
       getter: function (job) {
         return `${job.getCpus() || ''}`;
@@ -47,7 +47,7 @@ const General = {
     },
     cmd: {
       title: 'Command',
-      description: 'The command executed by the service',
+      description: 'The command executed by the service.',
       type: 'string',
       multiLine: true,
       getter: function (job) {
