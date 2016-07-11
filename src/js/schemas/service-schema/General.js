@@ -4,12 +4,16 @@ import React from 'react';
 
 let General = {
   title: 'General',
-  description: 'Configure your container',
+  description: {
+    <span>
+    Configure your container here or <a href="/#/universe/">install from Universe</a>.
+    </span>
+  },
   type: 'object',
   properties: {
     id: {
       title: 'ID',
-      description: 'The id for the service',
+      description: 'The service ID.',
       type: 'string',
       getter: function (service) {
         return service.getId();
@@ -20,7 +24,7 @@ let General = {
       properties: {
         cpus: {
           title: 'CPUs',
-          description: 'The amount of CPUs which are used for the service',
+          description: 'The amount of CPUs the service requires.',
           type: 'number',
           default: 1,
           getter: function (service) {
@@ -55,7 +59,7 @@ let General = {
     },
     cmd: {
       title: 'Command',
-      description: 'The command which is executed by the service',
+      description: 'The command executed by the service.',
       type: 'string',
       multiLine: true,
       getter: function (service) {
